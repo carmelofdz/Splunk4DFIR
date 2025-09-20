@@ -59,6 +59,7 @@ If you dont see data being ingested, check the permissions of your artifacts fil
 - `artifacts/zeek/`: drop there your json zeek files
 - `artifacts/suricata/`: drop there your eve.json suricata file
 - `artifacts/supertimelines/`: drop there your plaso l2tcsv outputs
+- `artifacts/plaso/`: drop there your plaso json_line outputs
 - `artifacts/memprocfs/`: drop there your MemProcFS forensic json output files
 - `artifacts/syslog/`: drop there linux syslog logs
 - `artifacts/gcp/`: drop there exported Google Cloud Plateform Audit logs
@@ -74,6 +75,7 @@ additionnaly some [macros](Splunk4DFIR/default/macros.conf) are configurable to 
 - `winevtx`: points to EvtxECmd csv output files
 - `hayabusa`: points to hayabusa csv output files
 - `suzakuaws`: points to suzaku aws csv timeline output files
+- `macoslogs`: point to macos unified logs
 
 
 ## Ingest evtx as json
