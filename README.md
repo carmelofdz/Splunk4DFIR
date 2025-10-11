@@ -41,7 +41,7 @@ Drop your files under the appropriate folder in `artifacts/` then build and run 
 
 ```
 sudo docker build -t splunk4dfir .
-sudo docker run --name splunk4dfir -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_PASSWORD=changeme -e SPLUNK_APPS_URL="/mnt/resources/sankey-diagram-custom-visualization_130.tgz" -p 8000:8000 -p 8089:8089 -v ./artifacts:/mnt/artifacts -v ./resources:/mnt/resources splunk4dfir:latest start
+sudo docker run --name splunk4dfir -e SPLUNK_START_ARGS=--accept-license -e SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com -e SPLUNK_PASSWORD=changeme -e SPLUNK_APPS_URL="/mnt/resources/sankey-diagram-custom-visualization_130.tgz" -p 8000:8000 -p 8089:8089 -v ./artifacts:/mnt/artifacts -v ./resources:/mnt/resources splunk4dfir:latest start
 ```
 
 goto: http://127.0.0.1:8000/en-US/app/Splunk4DFIR/search
@@ -59,6 +59,7 @@ If you dont see data being ingested, check the permissions of your artifacts fil
 - `artifacts/zeek/`: drop there your json zeek files
 - `artifacts/suricata/`: drop there your eve.json suricata file
 - `artifacts/supertimelines/`: drop there your plaso l2tcsv outputs
+- `artifacts/plaso/`: drop there your plaso json_line outputs
 - `artifacts/memprocfs/`: drop there your MemProcFS forensic json output files
 - `artifacts/syslog/`: drop there linux syslog logs
 - `artifacts/gcp/`: drop there exported Google Cloud Plateform Audit logs
@@ -74,6 +75,7 @@ additionnaly some [macros](Splunk4DFIR/default/macros.conf) are configurable to 
 - `winevtx`: points to EvtxECmd csv output files
 - `hayabusa`: points to hayabusa csv output files
 - `suzakuaws`: points to suzaku aws csv timeline output files
+- `macoslogs`: point to macos unified logs
 
 
 ## Ingest evtx as json
